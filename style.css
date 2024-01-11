@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(45deg, rgb(211, 170, 123), rgb(38, 135, 136));
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(254, 254, 254);
+    margin: 0;
+}
+
+h1 {
+    margin: 10px;
+}
+
+.box {
+    background-color: rgb(11, 11, 11);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; 
+    transform: translateX(200%);
+transition: transform 0.4s ease ;
+    /* Ensure the images don't overflow the box */
+}
+
+.box img {
+    width: 100%; /* Make sure the image takes up the full width of the box */
+    height: 100%; /* Make sure the image takes up the full height of the box */
+    object-fit: cover; /* Ensure the image is fully contained within the box */
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-200%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
